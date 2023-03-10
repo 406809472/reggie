@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.reggie.mapper.DishMapper">
+
+    <select id="getAllDishDto" resultType="com.itheima.reggie.dto.DishDto" >
+        select a.*,b.name categoryName from dish a join category b on a.category_id = b.id
+    </select>
+    <select id="getDishByName" resultType="com.itheima.reggie.entity.Dish">
+        select a.* from dish a where a.name=#{name}
+    </select>
+</mapper>
